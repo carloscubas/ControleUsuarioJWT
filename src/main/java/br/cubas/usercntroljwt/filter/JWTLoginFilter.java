@@ -24,7 +24,6 @@ import br.cubas.usercntroljwt.dto.Role;
 import br.cubas.usercntroljwt.dto.User;
 import br.cubas.usercntroljwt.services.TokenAuthenticationService;
 
-
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
     public JWTLoginFilter(String url, AuthenticationManager authManager) {

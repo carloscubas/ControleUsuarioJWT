@@ -74,13 +74,15 @@ public class UserControllers {
 	@PostMapping("/registration")
 	public ResponseEntity<String> registration(@RequestBody User user) {
 		
+		String password = user.getPassword();
+		
 		String token;
 		
 		try {
 			
 			userService.save(user);
 			
-			token = securityService.login(user.getUsername(), user.getPassword());
+			token = securityService.login(user.getUsername(), password);
 			
 			if(token == null) {
 				return new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
